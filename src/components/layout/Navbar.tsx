@@ -1,0 +1,143 @@
+'use client'
+
+import { useState } from 'react'
+import Link from 'next/link'
+import { motion, AnimatePresence } from 'framer-motion'
+import { ShoppingBag } from 'lucide-react'
+import Button from '@/components/ui/Button'
+import { useCart } from '@/components/cart/CartProvider'
+import { WHATSAPP_URL } from '@/lib/constants'
+
+const NAV_LINKS = [
+  { label: 'Inicio', href: '/' },
+  { label: 'Catálogo', href: '/catalogo' },
+  { label: 'Mayoreo', href: '/mayoreo' },
+  { label: 'Nosotros', href: '/nosotros' },
+  { label: 'Contacto', href: '/contacto' },
+]
+
+export default function Navbar() {
+  const [isOpen, setIsOpen] = useState(false)
+  const { cartCount, openCart } = useCart()
+
+  return (
+    <>
+      <nav className="fixed top-0 left-0 z-50 w-full bg-black/80 backdrop-blur-xl border-b border-white/5 announcement-offset">
+        <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 md:px-6">
+          {/* Logo */}
+          <Link href="/" className="flex items-baseline gap-1">
+            <span className="font-[family-name:var(--font-display)] text-2xl tracking-widest text-white">
+              LUCCA
+            </span>
+            <span className="text-xs uppercase tracking-wider text-gold">
+              SNEAKERS
+            </span>
+          </Link>
+
+          {/* Desktop links */}
+          <ul className="hidden items-center gap-8 md:flex">
+            {NAV_LINKS.map((link) => (
+              <li key={link.href}>
+                <Link
+                  href={link.href}
+                  className="font-[family-name:var(--font-body)] text-sm uppercase tracking-wider text-white transition-colors hover:text-gold"
+                >
+                  {link.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+
+          {/* Right side */}
+          <div className="flex items-center gap-4">
+            {/* Cart icon */}
+            <button
+              onClick={openCart}
+              className="relative flex h-10 w-10 items-center justify-center rounded-lg text-white transition-colors hover:bg-white/10 cursor-pointer"
+              aria-label="Abrir carrito"
+            >
+              <ShoppingBag className="h-5 w-5" />
+              {cartCount > 0 && (
+                <span className="absolute -top-0.5 -right-0.5 flex h-5 w-5 items-center justify-center rounded-full bg-[var(--color-gold)] text-[10px] font-bold text-black">
+                  {cartCount > 99 ? '99+' : cartCount}
+                </span>
+              )}
+            </button>
+
+            <div className="hidden md:block">
+              <Button variant="whatsapp" size="sm" href={WHATSAPP_URL}>
+                WhatsApp
+              </Button>
+            </div>
+
+            {/* Mobile hamburger */}
+            <button
+              className="relative z-50 flex h-8 w-8 flex-col items-center justify-center gap-1.5 md:hidden"
+              onClick={() => setIsOpen(!isOpen)}
+              aria-label="Toggle menu"
+            >
+              <motion.span
+                className="block h-0.5 w-6 bg-white"
+                animate={isOpen ? { rotate: 45, y: 8 } : { rotate: 0, y: 0 }}
+                transition={{ duration: 0.3 }}
+              />
+              <motion.span
+                className="block h-0.5 w-6 bg-white"
+                animate={isOpen ? { opacity: 0 } : { opacity: 1 }}
+                transition={{ duration: 0.2 }}
+              />
+              <motion.span
+                className="block h-0.5 w-6 bg-white"
+                animate={isOpen ? { rotate: -45, y: -8 } : { rotate: 0, y: 0 }}
+                transition={{ duration: 0.3 }}
+              />
+            </button>
+          </div>
+        </div>
+      </nav>
+
+      {/* Mobile overlay */}
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            className="fixed inset-0 z-40 flex flex-col items-center justify-center bg-black"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3 }}
+          >
+            <ul className="flex flex-col items-center gap-8">
+              {NAV_LINKS.map((link, i) => (
+                <motion.li
+                  key={link.href}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: 20 }}
+                  transition={{ delay: i * 0.1 }}
+                >
+                  <Link
+                    href={link.href}
+                    onClick={() => setIsOpen(false)}
+                    className="font-[family-name:var(--font-display)] text-3xl uppercase tracking-widest text-white transition-colors hover:text-gold"
+                  >
+                    {link.label}
+                  </Link>
+                </motion.li>
+              ))}
+            </ul>
+            <motion.div
+              className="mt-10"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.5 }}
+            >
+              <Button variant="whatsapp" size="md" href={WHATSAPP_URL}>
+                WhatsApp
+              </Button>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </>
+  )
+}

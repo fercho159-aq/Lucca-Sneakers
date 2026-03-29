@@ -1,36 +1,90 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Lucca Sneakers
 
-## Getting Started
+Sitio web para Lucca Sneakers — tienda de sneakers premium en Tepito, CDMX.
 
-First, run the development server:
+## Tech Stack
+
+- **Framework:** Next.js 14+ (App Router)
+- **Lenguaje:** TypeScript
+- **Estilos:** Tailwind CSS v4
+- **Animaciones:** Framer Motion
+- **Base de datos:** PostgreSQL (Neon Serverless)
+- **ORM:** Prisma con adapter Neon
+- **Deploy:** Vercel
+
+## Setup Local
 
 ```bash
+# 1. Clona el repositorio
+git clone <repo-url>
+cd lucca-sneakers
+
+# 2. Instala dependencias
+npm install
+
+# 3. Configura variables de entorno
+cp .env.example .env
+# Edita .env con tu DATABASE_URL de Neon
+
+# 4. Sincroniza la base de datos
+npx prisma db push
+
+# 5. Carga datos iniciales
+npx prisma db seed
+
+# 6. Inicia el servidor de desarrollo
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Abre [http://localhost:3000](http://localhost:3000) para ver el sitio.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Deploy en Vercel
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. Conecta el repositorio a [Vercel](https://vercel.com)
+2. En **Settings > Environment Variables**, agrega:
+   - `DATABASE_URL` — connection string de tu base de datos Neon
+3. Haz deploy — Vercel ejecutará automáticamente `prisma generate` durante el build
 
-## Learn More
+## Estructura del Sitio
 
-To learn more about Next.js, take a look at the following resources:
+| Ruta | Descripcion |
+|------|-------------|
+| `/` | Home — hero, productos destacados, testimonios, CTAs |
+| `/catalogo` | Catalogo completo con filtro por marca |
+| `/mayoreo` | Informacion para mayoristas — precios, proceso, FAQ |
+| `/contacto` | WhatsApp, mapa de Tepito, redes sociales |
+| `/admin` | Panel de administracion para gestionar productos |
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Agregar/Cambiar Imagenes de Productos
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. Sube tus imagenes a un CDN o a `/public/products/`
+2. En el panel admin (`/admin`), agrega la URL de imagen al crear o editar un producto
+3. **Formato recomendado:** 800x600px, `.webp`, menos de 200KB
+4. Si no hay imagen, se muestra un placeholder con gradiente oscuro
 
-## Deploy on Vercel
+## Panel de Administracion
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Accede a `/admin` para:
+- Ver estadisticas del catalogo
+- Agregar nuevos productos
+- Marcar productos como Nuevo/Hot
+- Activar/desactivar productos (soft delete)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+> **Nota:** El admin actualmente no tiene autenticacion. Se recomienda agregar auth antes de produccion.
+
+## Base de Datos
+
+El proyecto usa Prisma con 3 modelos:
+- **Product** — catalogo de sneakers
+- **Testimonial** — resenas de clientes
+- **FAQ** — preguntas frecuentes de mayoreo
+
+Para ver/editar datos directamente:
+```bash
+npx prisma studio
+```
+
+## Contacto
+
+- **WhatsApp:** [735 388 4148](https://wa.me/527353884148)
+- **Ubicacion:** Tepito, Cuauhtemoc, Ciudad de Mexico
