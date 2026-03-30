@@ -13,6 +13,16 @@ export default function AnnouncementBar() {
     }
   }, [])
 
+  useEffect(() => {
+    document.documentElement.style.setProperty(
+      '--announcement-height',
+      isVisible ? '32px' : '0px'
+    )
+    return () => {
+      document.documentElement.style.setProperty('--announcement-height', '0px')
+    }
+  }, [isVisible])
+
   const handleClose = () => {
     setIsVisible(false)
     sessionStorage.setItem('announcement-dismissed', 'true')
@@ -21,8 +31,8 @@ export default function AnnouncementBar() {
   if (!isVisible) return null
 
   return (
-    <div className="fixed top-0 left-0 z-60 w-full bg-[#FF3C3C] text-white">
-      <div className="relative flex items-center justify-center py-1.5 px-8">
+    <div className="fixed top-0 left-0 z-[60] w-full bg-[#FF3C3C] text-white h-8">
+      <div className="relative flex h-full items-center justify-center overflow-hidden px-8">
         <div className="overflow-hidden whitespace-nowrap">
           <p className="inline-block animate-marquee text-xs font-medium tracking-wide">
             🔥 NUEVOS MODELOS CADA SEMANA &middot; MAYOREO DESDE $550 &middot; ENVIOS A TODO MEXICO 🔥

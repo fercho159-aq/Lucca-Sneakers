@@ -22,7 +22,7 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className="fixed top-0 left-0 z-50 w-full bg-black/80 backdrop-blur-xl border-b border-white/5 announcement-offset">
+      <nav className="fixed left-0 z-50 w-full bg-black/80 backdrop-blur-xl border-b border-white/5" style={{ top: 'var(--announcement-height, 0px)' }}>
         <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 md:px-6">
           {/* Logo */}
           <Link href="/" className="flex items-baseline gap-1">

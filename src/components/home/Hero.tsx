@@ -19,44 +19,47 @@ const fadeUp = {
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background gradient mesh */}
-      <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,rgba(245,208,0,0.15)_0%,transparent_50%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,rgba(245,208,0,0.1)_0%,transparent_50%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(245,208,0,0.05)_0%,transparent_40%)]" />
-      </div>
+    <section className="relative min-h-screen flex items-center overflow-hidden">
+      {/* Background image */}
+      <div
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: "url('/images/hero.png')" }}
+      />
+      {/* Dark overlay gradient from left for text readability */}
+      <div className="absolute inset-0 bg-gradient-to-r from-black via-black/80 to-transparent" />
 
       <motion.div
-        className="relative z-10 max-w-4xl mx-auto text-center px-4"
+        className="relative z-10 max-w-3xl px-6 md:px-12 lg:px-20"
         variants={stagger}
         initial="hidden"
         animate="visible"
       >
         <motion.h1
-          className="font-[family-name:var(--font-display)] text-6xl md:text-7xl lg:text-8xl uppercase tracking-wider text-white"
+          className="font-[family-name:var(--font-display)] text-5xl sm:text-6xl md:text-7xl lg:text-8xl uppercase tracking-wider text-white leading-[0.95]"
           variants={fadeUp}
         >
-          TUS TENIS FAVORITOS
+          TUS TENIS
           <br />
-          AL MEJOR PRECIO
+          FAVORITOS
+          <br />
+          <span className="text-[var(--color-gold)]">AL MEJOR PRECIO</span>
         </motion.h1>
 
         <motion.p
-          className="mt-6 text-lg md:text-xl text-gray-400"
+          className="mt-6 text-lg md:text-xl text-gray-300 max-w-lg"
           variants={fadeUp}
         >
           +200 modelos &middot; Desde $550 MXN &middot; Tepito, CDMX
         </motion.p>
 
         <motion.div
-          className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4"
+          className="mt-8 flex flex-col sm:flex-row gap-4"
           variants={fadeUp}
         >
-          <Button variant="primary" href="/catalogo">
+          <Button variant="primary" size="lg" href="/catalogo">
             VER CATÁLOGO
           </Button>
-          <Button variant="whatsapp" href={WHATSAPP_URL}>
+          <Button variant="whatsapp" size="lg" href={WHATSAPP_URL}>
             PEDIR POR WHATSAPP
           </Button>
         </motion.div>
