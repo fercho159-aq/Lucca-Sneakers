@@ -11,8 +11,13 @@ const STATS_DATA = [
 
 export default function StatsBar() {
   return (
-    <section className="bg-[#1A1A1A] py-16">
-      <div className="mx-auto max-w-5xl px-4 grid grid-cols-2 md:grid-cols-4 gap-8">
+    <section
+      className="relative py-16 bg-cover bg-center"
+      style={{ backgroundImage: "url('/images/texture-bg.png')" }}
+    >
+      {/* Dark overlay */}
+      <div className="absolute inset-0 bg-[#1A1A1A]/85" />
+      <div className="relative z-10 mx-auto max-w-5xl px-4 grid grid-cols-2 md:grid-cols-4 gap-8">
         {STATS_DATA.map((stat) => (
           <StatsCounter key={stat.label} value={stat.value} label={stat.label} />
         ))}

@@ -50,7 +50,11 @@ export default function NosotrosContent() {
   return (
     <>
       {/* Hero */}
-      <section className="relative pt-32 pb-20 px-4 overflow-hidden">
+      <section
+        className="relative pt-32 pb-20 px-4 overflow-hidden bg-cover bg-center"
+        style={{ backgroundImage: "url('/images/about-store.png')" }}
+      >
+        <div className="absolute inset-0 bg-black/60" />
         <div className="absolute inset-0 bg-gradient-to-b from-[var(--color-gold)]/5 to-transparent" />
         <div className="relative mx-auto max-w-4xl text-center">
           <motion.h1

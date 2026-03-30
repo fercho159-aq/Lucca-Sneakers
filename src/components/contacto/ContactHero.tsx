@@ -4,9 +4,14 @@ import { motion } from 'framer-motion'
 
 export default function ContactHero() {
   return (
-    <section className="pt-28 pb-12 px-4">
+    <section
+      className="relative pt-28 pb-12 px-4 bg-cover bg-center"
+      style={{ backgroundImage: "url('/images/about-store.png')" }}
+    >
+      {/* Dark overlay */}
+      <div className="absolute inset-0 bg-black/60" />
       <motion.div
-        className="mx-auto max-w-4xl text-center"
+        className="relative z-10 mx-auto max-w-4xl text-center"
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, ease: 'easeOut' }}

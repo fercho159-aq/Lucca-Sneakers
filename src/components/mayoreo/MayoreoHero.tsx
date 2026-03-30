@@ -9,11 +9,14 @@ const fadeUp = {
 
 export default function MayoreoHero() {
   return (
-    <section className="relative min-h-[50vh] flex items-center justify-center overflow-hidden pt-20">
-      {/* Subtle gradient background */}
-      <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(245,208,0,0.08)_0%,transparent_60%)]" />
-      </div>
+    <section
+      className="relative min-h-[50vh] flex items-center justify-center overflow-hidden pt-20 bg-cover bg-center"
+      style={{ backgroundImage: "url('/images/wholesale-banner.png')" }}
+    >
+      {/* Dark overlay */}
+      <div className="absolute inset-0 bg-black/60" />
+      {/* Subtle gradient accent */}
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(245,208,0,0.08)_0%,transparent_60%)]" />
 
       <motion.div
         className="relative z-10 max-w-4xl mx-auto text-center px-4"

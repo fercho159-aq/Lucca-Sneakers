@@ -33,8 +33,13 @@ export default function ValueProps() {
   const isInView = useInView(ref, { once: true, margin: '-80px' })
 
   return (
-    <section className="py-20 px-4">
-      <div className="mx-auto max-w-7xl">
+    <section
+      className="relative py-20 px-4 bg-cover bg-center"
+      style={{ backgroundImage: "url('/images/texture-bg.png')" }}
+    >
+      {/* Dark overlay to keep texture subtle */}
+      <div className="absolute inset-0 bg-[#0A0A0A]/90" />
+      <div className="relative z-10 mx-auto max-w-7xl">
         <SectionTitle title="POR QUÉ ELEGIRNOS" />
 
         <div

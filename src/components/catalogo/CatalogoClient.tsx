@@ -4,6 +4,7 @@ import { useState, useMemo } from 'react'
 import { motion } from 'framer-motion'
 import ProductCard from '@/components/ui/ProductCard'
 import type { Product } from '@/components/ui/ProductCard'
+import Image from 'next/image'
 import SectionTitle from '@/components/ui/SectionTitle'
 import Button from '@/components/ui/Button'
 import { BRANDS, WHATSAPP_URL } from '@/lib/constants'
@@ -25,6 +26,18 @@ export default function CatalogoClient({ initialProducts }: CatalogoClientProps)
   return (
     <section className="pt-28 pb-20 px-4">
       <div className="mx-auto max-w-7xl">
+        {/* Header banner */}
+        <div className="relative mb-10 overflow-hidden rounded-2xl">
+          <Image
+            src="/images/new-arrivals.png"
+            alt="Catálogo de sneakers"
+            width={1400}
+            height={350}
+            className="w-full h-40 md:h-56 object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-black/40 to-transparent" />
+        </div>
+
         <SectionTitle
           title="NUESTRO CATÁLOGO"
           subtitle="El inventario cambia cada semana. Confirma disponibilidad por WhatsApp."

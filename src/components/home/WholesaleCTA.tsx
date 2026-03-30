@@ -6,9 +6,14 @@ import { WHATSAPP_URL } from '@/lib/constants'
 
 export default function WholesaleCTA() {
   return (
-    <section className="py-20 bg-gradient-to-r from-[#1A1A1A] to-[#0A0A0A]">
+    <section
+      className="relative py-20 bg-cover bg-center"
+      style={{ backgroundImage: "url('/images/wholesale-banner.png')" }}
+    >
+      {/* Dark overlay */}
+      <div className="absolute inset-0 bg-black/60" />
       <motion.div
-        className="mx-auto max-w-4xl px-4 text-center"
+        className="relative z-10 mx-auto max-w-4xl px-4 text-center"
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: '-80px' }}

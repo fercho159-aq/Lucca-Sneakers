@@ -17,6 +17,9 @@ export const metadata: Metadata = {
   title: 'Lucca Sneakers | Tenis Premium en Tepito, CDMX',
   description: 'Tenis de calidad premium al mejor precio. +200 modelos en tendencia. Menudeo desde $650 MXN, mayoreo desde $550 MXN. Tepito, Ciudad de México.',
   keywords: ['tenis', 'sneakers', 'tepito', 'cdmx', 'mayoreo', 'nike', 'adidas', 'jordan'],
+  openGraph: {
+    images: [{ url: '/images/og-image.png', width: 1200, height: 630 }],
+  },
 }
 
 export default function RootLayout({
