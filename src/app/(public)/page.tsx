@@ -10,9 +10,9 @@ import WholesaleCTA from '@/components/home/WholesaleCTA'
 import FinalCTA from '@/components/home/FinalCTA'
 
 export const metadata = {
-  title: 'Lucca Sneakers | Tenis Premium en Tepito, CDMX',
+  title: 'Lucca Sneakers | Coleccion de Tenis Premium en Tepito, CDMX',
   description:
-    'Tenis de calidad premium al mejor precio. +200 modelos en tendencia. Menudeo desde $650 MXN, mayoreo desde $550 MXN. Tepito, Ciudad de México.',
+    'Explora nuestra coleccion de tenis premium. +200 modelos en tendencia. Visitanos en Tepito, Ciudad de Mexico.',
 }
 
 export default async function Home() {

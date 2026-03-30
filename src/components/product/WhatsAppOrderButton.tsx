@@ -32,7 +32,7 @@ export default function WhatsAppOrderButton({
         }`}
       >
         <FaWhatsapp className="h-5 w-5" />
-        PEDIR POR WHATSAPP
+        CONSULTAR POR WHATSAPP
       </button>
       {disabled && (
         <p className="mt-1.5 text-center text-xs text-gray-400">

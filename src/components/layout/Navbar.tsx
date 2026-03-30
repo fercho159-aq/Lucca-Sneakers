@@ -3,23 +3,19 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import { motion, AnimatePresence } from 'framer-motion'
-import { ShoppingBag } from 'lucide-react'
 import Button from '@/components/ui/Button'
-import { useCart } from '@/components/cart/CartProvider'
 import { WHATSAPP_URL } from '@/lib/constants'
 
 const NAV_LINKS = [
   { label: 'Inicio', href: '/' },
-  { label: 'Catálogo', href: '/catalogo' },
-  { label: 'Mayoreo', href: '/mayoreo' },
+  { label: 'Modelos', href: '/catalogo' },
+  { label: 'Distribución', href: '/mayoreo' },
   { label: 'Nosotros', href: '/nosotros' },
   { label: 'Contacto', href: '/contacto' },
 ]
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
-  const { cartCount, openCart } = useCart()
-
   return (
     <>
       <nav className="fixed left-0 z-50 w-full bg-black/80 backdrop-blur-xl border-b border-white/5" style={{ top: 'var(--announcement-height, 0px)' }}>
@@ -50,20 +46,6 @@ export default function Navbar() {
 
           {/* Right side */}
           <div className="flex items-center gap-4">
-            {/* Cart icon */}
-            <button
-              onClick={openCart}
-              className="relative flex h-10 w-10 items-center justify-center rounded-lg text-white transition-colors hover:bg-white/10 cursor-pointer"
-              aria-label="Abrir carrito"
-            >
-              <ShoppingBag className="h-5 w-5" />
-              {cartCount > 0 && (
-                <span className="absolute -top-0.5 -right-0.5 flex h-5 w-5 items-center justify-center rounded-full bg-[var(--color-gold)] text-[10px] font-bold text-black">
-                  {cartCount > 99 ? '99+' : cartCount}
-                </span>
-              )}
-            </button>
-
             <div className="hidden md:block">
               <Button variant="whatsapp" size="sm" href={WHATSAPP_URL}>
                 WhatsApp

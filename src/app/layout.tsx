@@ -15,7 +15,7 @@ const dmSans = DM_Sans({
 
 export const metadata: Metadata = {
   title: 'Lucca Sneakers | Tenis Premium en Tepito, CDMX',
-  description: 'Tenis de calidad premium al mejor precio. +200 modelos en tendencia. Menudeo desde $650 MXN, mayoreo desde $550 MXN. Tepito, Ciudad de México.',
+  description: 'Explora nuestra coleccion de tenis premium. +200 modelos en tendencia. Visitanos en Tepito, Ciudad de Mexico.',
   keywords: ['tenis', 'sneakers', 'tepito', 'cdmx', 'mayoreo', 'nike', 'adidas', 'jordan'],
   openGraph: {
     images: [{ url: '/images/og-image.png', width: 1200, height: 630 }],

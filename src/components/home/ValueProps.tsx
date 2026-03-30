@@ -18,8 +18,8 @@ const PROPS = [
   },
   {
     icon: DollarSign,
-    title: 'Mejor Precio',
-    description: 'Desde $550 MXN en mayoreo',
+    title: 'Gran Variedad',
+    description: 'Modelos para todos los estilos y gustos',
   },
   {
     icon: Shield,

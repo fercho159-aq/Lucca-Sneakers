@@ -38,18 +38,18 @@ export default function Hero() {
           className="font-[family-name:var(--font-display)] text-5xl sm:text-6xl md:text-7xl lg:text-8xl uppercase tracking-wider text-white leading-[0.95]"
           variants={fadeUp}
         >
-          TUS TENIS
+          DESCUBRE
           <br />
-          FAVORITOS
+          TU ESTILO
           <br />
-          <span className="text-[var(--color-gold)]">AL MEJOR PRECIO</span>
+          <span className="text-[var(--color-gold)]">SNEAKER FAVORITO</span>
         </motion.h1>
 
         <motion.p
           className="mt-6 text-lg md:text-xl text-gray-300 max-w-lg"
           variants={fadeUp}
         >
-          +200 modelos &middot; Desde $550 MXN &middot; Tepito, CDMX
+          +200 modelos en tendencia &middot; Tepito, CDMX
         </motion.p>
 
         <motion.div
@@ -57,10 +57,10 @@ export default function Hero() {
           variants={fadeUp}
         >
           <Button variant="primary" size="lg" href="/catalogo">
-            VER CATÁLOGO
+            VER MODELOS
           </Button>
           <Button variant="whatsapp" size="lg" href={WHATSAPP_URL}>
-            PEDIR POR WHATSAPP
+            CONSULTAR DISPONIBILIDAD
           </Button>
         </motion.div>
       </motion.div>

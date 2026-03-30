@@ -1,8 +1,8 @@
 export const WHATSAPP_NUMBER = '7353884148'
-export const WHATSAPP_URL = 'https://wa.me/527353884148?text=Hola%20Lucca%20Sneakers%2C%20me%20interesa%20un%20modelo'
+export const WHATSAPP_URL = 'https://wa.me/527353884148?text=Hola%2C%20me%20gustar%C3%ADa%20informaci%C3%B3n%20sobre%20sus%20modelos'
 export const getWhatsAppURL = (product?: string) =>
   `https://wa.me/527353884148?text=${encodeURIComponent(
-    product ? `Hola Lucca Sneakers, me interesa el modelo: ${product}` : 'Hola Lucca Sneakers, me interesa conocer sus modelos'
+    product ? `Hola, me gustaria informacion sobre el modelo: ${product}` : 'Hola, me gustaria informacion sobre sus modelos'
   )}`
 
 export const SOCIAL_LINKS = {

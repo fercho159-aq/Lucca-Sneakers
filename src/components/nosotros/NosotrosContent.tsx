@@ -11,7 +11,7 @@ import { SOCIAL_LINKS, WHATSAPP_URL } from '@/lib/constants'
 const STATS_DATA = [
   { value: '200+', label: 'Modelos Disponibles' },
   { value: '15', label: 'Modelos Nuevos por Semana' },
-  { value: '500+', label: 'Clientes Mayoreo' },
+  { value: '500+', label: 'Clientes Satisfechos' },
   { value: '5+', label: 'Anos de Experiencia' },
 ]
 
@@ -28,7 +28,7 @@ const SOCIALS = [
     href: SOCIAL_LINKS.facebook,
     label: 'Facebook',
     color: 'from-blue-600 to-blue-400',
-    description: 'Ofertas y promociones exclusivas',
+    description: 'Novedades y contenido exclusivo',
   },
   {
     icon: FaTiktok,
@@ -86,12 +86,12 @@ export default function NosotrosContent() {
           >
             <Crown className="mx-auto h-12 w-12 text-[var(--color-gold)] mb-6" />
             <p className="text-xl md:text-2xl leading-relaxed text-gray-300">
-              Desde el corazon de Tepito, traemos los modelos mas en tendencia
-              al mejor precio de la ciudad.
+              Desde el corazon de Tepito, exhibimos los modelos mas en tendencia
+              para los verdaderos amantes de los sneakers.
             </p>
             <p className="mt-6 text-lg leading-relaxed text-gray-400">
-              Con mas de 200 modelos en existencia y novedades cada semana, somos
-              la mejor opcion en sneakers de calidad premium.
+              Con mas de 200 modelos en exhibicion y novedades cada semana, somos
+              la vitrina de sneakers de calidad premium.
             </p>
           </motion.div>
         </div>
@@ -149,7 +149,7 @@ export default function NosotrosContent() {
             viewport={{ once: true }}
           >
             <h2 className="font-[family-name:var(--font-display)] text-3xl md:text-4xl tracking-wider text-white">
-              VISITANOS EN TEPITO
+              CONOCE NUESTRO SHOWROOM
             </h2>
 
             <div className="mt-6 flex flex-col items-center gap-3 text-gray-400">
@@ -169,7 +169,7 @@ export default function NosotrosContent() {
                 WhatsApp
               </Button>
               <Button variant="secondary" href="/catalogo">
-                Ver Catalogo
+                Ver Modelos
               </Button>
             </div>
           </motion.div>

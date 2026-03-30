@@ -31,13 +31,13 @@ export default function MayoreoHero() {
           className="font-[family-name:var(--font-display)] text-5xl md:text-6xl lg:text-7xl uppercase tracking-wider text-white"
           variants={fadeUp}
         >
-          INICIA TU NEGOCIO DE TENIS HOY
+          PROGRAMA DE DISTRIBUCIÓN
         </motion.h1>
         <motion.p
           className="mt-6 text-lg md:text-xl text-gray-400"
           variants={fadeUp}
         >
-          Precio de mayoreo desde $550 MXN por par. Más de 200 modelos disponibles.
+          Más de 200 modelos disponibles. Contáctanos para conocer nuestras alianzas comerciales.
         </motion.p>
       </motion.div>
     </section>

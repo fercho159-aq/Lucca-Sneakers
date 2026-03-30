@@ -90,11 +90,11 @@ export default function CartClient({ cart }: CartClientProps) {
               TU CARRITO ESTA VACIO
             </h1>
             <p className="mt-2 text-gray-400">
-              Agrega productos desde nuestro catalogo
+              Agrega productos desde nuestros modelos
             </p>
             <div className="mt-8">
               <Button variant="primary" href="/catalogo">
-                VER CATALOGO
+                VER MODELOS
               </Button>
             </div>
           </motion.div>

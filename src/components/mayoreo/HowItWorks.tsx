@@ -2,27 +2,27 @@
 
 import { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
-import { Search, ShoppingCart, Truck } from 'lucide-react'
+import { Search, MessageCircle, Handshake } from 'lucide-react'
 import SectionTitle from '@/components/ui/SectionTitle'
 
 const STEPS = [
   {
     num: 1,
     icon: Search,
-    title: 'Elige tus Modelos',
-    description: 'Revisa nuestro catálogo o pídenos fotos por WhatsApp',
+    title: 'Explora Nuestro Catálogo',
+    description: 'Revisa nuestros modelos o solicita información por WhatsApp',
   },
   {
     num: 2,
-    icon: ShoppingCart,
-    title: 'Haz tu Pedido',
-    description: 'Mínimo 6 pares para precio de mayoreo a $550 MXN',
+    icon: MessageCircle,
+    title: 'Contáctanos',
+    description: 'Platícanos sobre tu negocio y lo que necesitas',
   },
   {
     num: 3,
-    icon: Truck,
-    title: 'Recibe tu Mercancía',
-    description: 'Recoge en Tepito o envío a toda la República',
+    icon: Handshake,
+    title: 'Iniciamos la Alianza',
+    description: 'Te damos toda la información para comenzar a trabajar juntos',
   },
 ]
 

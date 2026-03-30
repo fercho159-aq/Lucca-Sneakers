@@ -129,7 +129,7 @@ export default function CartDrawer() {
                     onClick={closeCart}
                     className="mt-4 text-sm font-medium text-[var(--color-gold)] hover:underline"
                   >
-                    Ver catalogo
+                    Ver modelos
                   </Link>
                 </div>
               ) : (

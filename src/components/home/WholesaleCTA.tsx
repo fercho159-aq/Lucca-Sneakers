@@ -20,17 +20,17 @@ export default function WholesaleCTA() {
         transition={{ duration: 0.6, ease: 'easeOut' }}
       >
         <h2 className="font-[family-name:var(--font-display)] text-4xl md:text-5xl uppercase tracking-wider text-white">
-          ¿QUIERES REVENDER TENIS?
+          ¿INTERESADO EN DISTRIBUCIÓN?
         </h2>
         <p className="mt-4 text-lg text-gray-400">
-          Precios especiales desde $550 MXN por par. Empieza tu negocio hoy.
+          Conoce nuestro programa de distribución y alianzas comerciales.
         </p>
         <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
           <Button variant="primary" href="/mayoreo">
-            VER MAYOREO
+            VER DISTRIBUCIÓN
           </Button>
           <Button variant="whatsapp" href={WHATSAPP_URL}>
-            PEDIR POR WHATSAPP
+            CONSULTAR POR WHATSAPP
           </Button>
         </div>
       </motion.div>

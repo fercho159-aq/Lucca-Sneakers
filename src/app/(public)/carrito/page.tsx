@@ -1,10 +1,7 @@
-import { getCartWithItems } from '@/lib/cart-actions'
-import CartClient from '@/components/cart/CartClient'
+import { redirect } from 'next/navigation'
 
-export const metadata = { title: 'Carrito | Lucca Sneakers' }
-export const dynamic = 'force-dynamic'
+export const metadata = { title: 'Lucca Sneakers' }
 
-export default async function CartPage() {
-  const cart = await getCartWithItems()
-  return <CartClient cart={cart} />
+export default function CartPage() {
+  redirect('/catalogo')
 }

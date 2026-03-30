@@ -9,7 +9,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   if (!product) return { title: 'Producto no encontrado' }
   return {
     title: `${product.name} | Lucca Sneakers`,
-    description: `${product.name} de ${product.brand} — $${product.priceRetail} MXN menudeo, $${product.priceWholesale} MXN mayoreo. Lucca Sneakers, Tepito CDMX.`,
+    description: `${product.name} de ${product.brand} — Lucca Sneakers, Tepito CDMX. Consulta disponibilidad por WhatsApp.`,
   }
 }
 

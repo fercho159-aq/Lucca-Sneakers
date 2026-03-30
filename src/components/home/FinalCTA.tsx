@@ -15,15 +15,15 @@ export default function FinalCTA() {
         transition={{ duration: 0.6, ease: 'easeOut' }}
       >
         <h2 className="font-[family-name:var(--font-display)] text-4xl md:text-5xl uppercase tracking-wider text-white">
-          ¿LISTO PARA TUS NUEVOS TENIS?
+          ¿TE INTERESA ALGUN MODELO?
         </h2>
         <div className="mt-8">
           <Button variant="whatsapp" size="lg" href={WHATSAPP_URL}>
-            PEDIR POR WHATSAPP
+            CONSULTAR POR WHATSAPP
           </Button>
         </div>
         <p className="mt-4 text-sm text-gray-500">
-          Respondemos en menos de 5 minutos
+          Pregunta por disponibilidad y te respondemos en minutos
         </p>
       </motion.div>
     </section>

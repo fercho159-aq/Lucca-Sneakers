@@ -56,7 +56,7 @@ export default function WholesaleForm() {
           >
             <CheckCircle className="mx-auto h-16 w-16 text-[var(--color-gold)]" />
             <h3 className="mt-4 font-[family-name:var(--font-display)] text-2xl tracking-wider text-white">
-              SOLICITUD ENVIADA
+              MENSAJE ENVIADO
             </h3>
             <p className="mt-2 text-gray-400">
               Nos pondremos en contacto contigo pronto. Gracias por tu interes.
@@ -88,8 +88,8 @@ export default function WholesaleForm() {
     <section className="py-16 px-4">
       <div className="mx-auto max-w-2xl">
         <SectionTitle
-          title="SOLICITA TU MAYOREO"
-          subtitle="Completa el formulario y te contactaremos con precios y disponibilidad."
+          title="CONTÁCTANOS"
+          subtitle="Completa el formulario y te contactaremos con información y disponibilidad."
         />
 
         <motion.form
@@ -176,9 +176,9 @@ export default function WholesaleForm() {
                 name="paresEstimados"
                 value={formData.paresEstimados}
                 onChange={handleChange}
-                min="6"
+                min="1"
                 className="w-full rounded-lg bg-[#0A0A0A] border border-white/10 px-4 py-2.5 text-white placeholder-gray-500 focus:border-[var(--color-gold)] focus:outline-none transition-colors"
-                placeholder="Minimo 6"
+                placeholder="Cantidad aproximada"
               />
             </div>
           </div>
@@ -209,7 +209,7 @@ export default function WholesaleForm() {
               ) : (
                 <Send className="h-5 w-5" />
               )}
-              {isPending ? 'ENVIANDO...' : 'ENVIAR SOLICITUD'}
+              {isPending ? 'ENVIANDO...' : 'ENVIAR MENSAJE'}
             </button>
           </div>
         </motion.form>

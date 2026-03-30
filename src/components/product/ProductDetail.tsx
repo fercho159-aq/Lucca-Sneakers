@@ -1,14 +1,9 @@
 'use client'
 
-import { useState, useTransition } from 'react'
 import { motion } from 'framer-motion'
-import { Footprints, ShoppingBag, Loader2 } from 'lucide-react'
+import { Footprints } from 'lucide-react'
+import { FaWhatsapp } from 'react-icons/fa'
 import Badge from '@/components/ui/Badge'
-import SizeSelector from '@/components/product/SizeSelector'
-import WhatsAppOrderButton from '@/components/product/WhatsAppOrderButton'
-import { formatPrice } from '@/lib/utils'
-import { addToCart } from '@/lib/cart-actions'
-import { useCart } from '@/components/cart/CartProvider'
 
 interface Variant {
   id: string
@@ -35,32 +30,8 @@ interface ProductDetailProps {
 }
 
 export default function ProductDetail({ product }: ProductDetailProps) {
-  const [selectedSize, setSelectedSize] = useState<string | null>(null)
-  const [selectedVariantId, setSelectedVariantId] = useState<string | null>(null)
-  const [showError, setShowError] = useState(false)
-  const [isPending, startTransition] = useTransition()
-  const [addedToCart, setAddedToCart] = useState(false)
-  const { refreshCart } = useCart()
-
-  const handleSizeSelect = (size: string, variantId: string) => {
-    setSelectedSize(size)
-    setSelectedVariantId(variantId)
-    setShowError(false)
-    setAddedToCart(false)
-  }
-
-  const handleAddToCart = () => {
-    if (!selectedVariantId) {
-      setShowError(true)
-      return
-    }
-    startTransition(async () => {
-      await addToCart(selectedVariantId, 1)
-      await refreshCart()
-      setAddedToCart(true)
-      setTimeout(() => setAddedToCart(false), 2000)
-    })
-  }
+  const whatsappMessage = `Hola, me interesa el modelo ${product.name}, ¿tienen disponibilidad?`
+  const whatsappURL = `https://wa.me/527353884148?text=${encodeURIComponent(whatsappMessage)}`
 
   return (
     <section className="pt-28 pb-16 px-4">
@@ -88,7 +59,7 @@ export default function ProductDetail({ product }: ProductDetailProps) {
             {/* Badges */}
             {(product.isNew || product.isHot) && (
               <div className="absolute top-4 right-4 flex flex-col gap-2">
-                {product.isNew && <Badge variant="new">NUEVO 🔥</Badge>}
+                {product.isNew && <Badge variant="new">NUEVO</Badge>}
                 {product.isHot && <Badge variant="hot">HOT</Badge>}
               </div>
             )}
@@ -108,58 +79,21 @@ export default function ProductDetail({ product }: ProductDetailProps) {
               {product.name}
             </h1>
 
-            {/* Prices */}
-            <div className="mt-6 flex flex-wrap items-center gap-4">
-              <div>
-                <span className="text-xs uppercase tracking-wider text-gray-400">Menudeo</span>
-                <p className="text-2xl font-bold text-white">
-                  {formatPrice(product.priceRetail)} MXN
-                </p>
-              </div>
-              <div className="rounded-lg bg-[var(--color-gold)]/10 border border-[var(--color-gold)]/30 px-4 py-2">
-                <span className="text-xs uppercase tracking-wider text-[var(--color-gold)]">Mayoreo</span>
-                <p className="text-lg font-bold text-[var(--color-gold)]">
-                  {formatPrice(product.priceWholesale)} MXN
-                </p>
-              </div>
-            </div>
+            <p className="mt-4 text-gray-400 leading-relaxed">
+              Modelo {product.name} de {product.brand}. Consulta disponibilidad de tallas y colores por WhatsApp.
+            </p>
 
-            {/* Size Selector */}
+            {/* Inquiry button */}
             <div className="mt-8">
-              <SizeSelector
-                variants={product.variants}
-                selectedSize={selectedSize}
-                onSelect={handleSizeSelect}
-              />
-            </div>
-
-            {/* Error message */}
-            {showError && (
-              <p className="mt-3 text-sm text-[#EF4444]">
-                ⚠️ Selecciona una talla primero
-              </p>
-            )}
-
-            {/* Action buttons */}
-            <div className="mt-8 flex flex-col gap-3">
-              <WhatsAppOrderButton
-                productName={product.name}
-                selectedSize={selectedSize}
-                disabled={!selectedSize}
-              />
-
-              <button
-                onClick={handleAddToCart}
-                disabled={isPending}
-                className="flex items-center justify-center gap-2 rounded-lg border border-white bg-transparent px-6 py-3.5 font-bold text-white transition-all hover:bg-white/10 cursor-pointer disabled:opacity-50"
+              <a
+                href={whatsappURL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 rounded-lg bg-[#25D366] px-6 py-3.5 font-bold text-white transition-all hover:brightness-110 w-full sm:w-auto"
               >
-                {isPending ? (
-                  <Loader2 className="h-5 w-5 animate-spin" />
-                ) : (
-                  <ShoppingBag className="h-5 w-5" />
-                )}
-                {addedToCart ? 'AGREGADO ✓' : 'AGREGAR AL CARRITO'}
-              </button>
+                <FaWhatsapp className="h-5 w-5" />
+                Consultar Disponibilidad
+              </a>
             </div>
           </motion.div>
         </div>

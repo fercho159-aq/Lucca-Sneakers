@@ -4,9 +4,6 @@ import { motion } from 'framer-motion'
 import Link from 'next/link'
 import { Footprints } from 'lucide-react'
 import Badge from '@/components/ui/Badge'
-import Button from '@/components/ui/Button'
-import { getWhatsAppURL } from '@/lib/constants'
-import { formatPrice } from '@/lib/utils'
 
 export interface Product {
   id: string
@@ -64,31 +61,8 @@ export default function ProductCard({ product }: ProductCardProps) {
         <div className="p-4">
           <h3 className="font-semibold text-white truncate">{product.name}</h3>
           <p className="text-sm text-gray-400">{product.brand}</p>
-          <div className="mt-1 flex items-center gap-2">
-            <span className="text-lg font-bold text-gold">
-              {formatPrice(product.priceRetail)}
-            </span>
-            <span className="text-xs font-medium text-[var(--color-gold)]/70">
-              {formatPrice(product.priceWholesale)} mayoreo
-            </span>
-          </div>
         </div>
       </Link>
-
-      <div className="px-4 pb-4">
-        <div
-          onClick={(e) => e.stopPropagation()}
-        >
-          <Button
-            variant="whatsapp"
-            size="sm"
-            href={getWhatsAppURL(product.name)}
-            className="w-full"
-          >
-            Pedir por WhatsApp
-          </Button>
-        </div>
-      </div>
     </motion.div>
   )
 }

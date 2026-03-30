@@ -17,7 +17,7 @@ const SOCIALS = [
   {
     icon: Globe,
     name: 'Facebook',
-    description: 'Ofertas y promociones',
+    description: 'Novedades y contenido exclusivo',
     href: SOCIAL_LINKS.facebook,
   },
   {

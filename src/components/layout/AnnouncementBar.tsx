@@ -35,11 +35,11 @@ export default function AnnouncementBar() {
       <div className="relative flex h-full items-center justify-center overflow-hidden px-8">
         <div className="overflow-hidden whitespace-nowrap">
           <p className="inline-block animate-marquee text-xs font-medium tracking-wide">
-            🔥 NUEVOS MODELOS CADA SEMANA &middot; MAYOREO DESDE $550 &middot; ENVIOS A TODO MEXICO 🔥
+            🔥 NUEVA COLECCION DISPONIBLE &middot; DESCUBRE LOS ULTIMOS MODELOS &middot; VISITANOS EN TEPITO 🔥
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            🔥 NUEVOS MODELOS CADA SEMANA &middot; MAYOREO DESDE $550 &middot; ENVIOS A TODO MEXICO 🔥
+            🔥 NUEVA COLECCION DISPONIBLE &middot; DESCUBRE LOS ULTIMOS MODELOS &middot; VISITANOS EN TEPITO 🔥
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            🔥 NUEVOS MODELOS CADA SEMANA &middot; MAYOREO DESDE $550 &middot; ENVIOS A TODO MEXICO 🔥
+            🔥 NUEVA COLECCION DISPONIBLE &middot; DESCUBRE LOS ULTIMOS MODELOS &middot; VISITANOS EN TEPITO 🔥
           </p>
         </div>
         <button

@@ -5,7 +5,7 @@ import StatsCounter from '@/components/ui/StatsCounter'
 const STATS_DATA = [
   { value: '200+', label: 'Modelos Disponibles' },
   { value: '15', label: 'Modelos Nuevos por Semana' },
-  { value: '500+', label: 'Clientes Mayoreo' },
+  { value: '500+', label: 'Clientes Satisfechos' },
   { value: '5+', label: 'Años de Experiencia' },
 ]
 

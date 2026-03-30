@@ -4,8 +4,8 @@ import { SOCIAL_LINKS, WHATSAPP_URL } from '@/lib/constants'
 
 const QUICK_LINKS = [
   { label: 'Inicio', href: '/' },
-  { label: 'Catálogo', href: '/catalogo' },
-  { label: 'Mayoreo', href: '/mayoreo' },
+  { label: 'Modelos', href: '/catalogo' },
+  { label: 'Distribución', href: '/mayoreo' },
   { label: 'Nosotros', href: '/nosotros' },
   { label: 'Contacto', href: '/contacto' },
 ]
@@ -33,7 +33,7 @@ export default function Footer() {
             </span>
           </div>
           <p className="mt-3 text-sm text-gray-400 leading-relaxed">
-            Tenis premium al mejor precio en Tepito, CDMX
+            Vitrina de tenis premium en Tepito, CDMX
           </p>
         </div>
 
