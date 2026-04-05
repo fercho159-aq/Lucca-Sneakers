@@ -2,13 +2,14 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { motion, AnimatePresence } from 'framer-motion'
 import Button from '@/components/ui/Button'
 import { WHATSAPP_URL } from '@/lib/constants'
 
 const NAV_LINKS = [
   { label: 'Inicio', href: '/' },
-  { label: 'Modelos', href: '/catalogo' },
+  { label: 'Catálogo', href: '/catalogo' },
   { label: 'Distribución', href: '/mayoreo' },
   { label: 'Nosotros', href: '/nosotros' },
   { label: 'Contacto', href: '/contacto' },
@@ -21,13 +22,14 @@ export default function Navbar() {
       <nav className="fixed left-0 z-50 w-full bg-black/80 backdrop-blur-xl border-b border-white/5" style={{ top: 'var(--announcement-height, 0px)' }}>
         <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 md:px-6">
           {/* Logo */}
-          <Link href="/" className="flex items-baseline gap-1">
-            <span className="font-[family-name:var(--font-display)] text-2xl tracking-widest text-white">
-              LUCCA
-            </span>
-            <span className="text-xs uppercase tracking-wider text-gold">
-              SNEAKERS
-            </span>
+          <Link href="/" className="flex items-center">
+            <Image
+              src="/images/lucca-logo.png"
+              alt="Lucca Sneakers Logo"
+              width={200}
+              height={60}
+              className="h-16 w-auto"
+            />
           </Link>
 
           {/* Desktop links */}

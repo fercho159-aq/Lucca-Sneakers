@@ -1,5 +1,7 @@
 import type { Metadata } from 'next'
 import { Bebas_Neue, DM_Sans } from 'next/font/google'
+import { DEFAULT_METADATA, getOrganizationJsonLd, getWebsiteJsonLd } from '@/lib/seo'
+import JsonLd from '@/components/seo/JsonLd'
 import './globals.css'
 
 const bebasNeue = Bebas_Neue({
@@ -14,12 +16,7 @@ const dmSans = DM_Sans({
 })
 
 export const metadata: Metadata = {
-  title: 'Lucca Sneakers | Tenis Premium en Tepito, CDMX',
-  description: 'Explora nuestra coleccion de tenis premium. +200 modelos en tendencia. Visitanos en Tepito, Ciudad de Mexico.',
-  keywords: ['tenis', 'sneakers', 'tepito', 'cdmx', 'mayoreo', 'nike', 'adidas', 'jordan'],
-  openGraph: {
-    images: [{ url: '/images/og-image.png', width: 1200, height: 630 }],
-  },
+  ...DEFAULT_METADATA,
 }
 
 export default function RootLayout({
@@ -30,6 +27,8 @@ export default function RootLayout({
   return (
     <html lang="es" className={`${bebasNeue.variable} ${dmSans.variable}`}>
       <body className="font-[family-name:var(--font-body)] bg-[#0A0A0A] text-[#FAFAFA] antialiased">
+        <JsonLd data={getOrganizationJsonLd()} />
+        <JsonLd data={getWebsiteJsonLd()} />
         {children}
       </body>
     </html>
